@@ -13,9 +13,8 @@ public class StatService {
         long mid = 0;
         if (months.length>0)
         {
-         long sum = 0;
+         long sum = calculateSum(months);
          for (int j = 0; j<months.length; j++){
-             sum+=months[j];
          }
          mid = sum / months.length;
         }
