@@ -1,31 +1,19 @@
 package ru.netology.stats;
 
 public class StatService {
-    public long calculateSum (long[] months) {
-     long sum = 0;
-     for (long month : months) {
-         sum += month;
-     }
-     return sum;
-    }
-
-    public long calculateMid (long[] months) {
-        long mid = 0;
-        if (months.length>0)
-        {
-         long sum = calculateSum(months);
-         for (int j = 0; j<months.length; j++){
-         }
-         mid = sum / months.length;
+    public long calculateSum(long[] months) {
+        long sum = 0;
+        for (long month : months) {
+            sum += month;
         }
-        return mid;
+        return sum;
     }
 
-    public long findMax (long [] sales) {
-        long maxSale = sales [0];
+    public long findMax(long[] sales) {
+        long maxSale = sales[0];
         long numberMaxMonth = 0;
-        for (int j = 0; j<sales.length; j++){
-            if (maxSale <= sales [j]){
+        for (int j = 0; j < sales.length; j++) {
+            if (maxSale <= sales[j]) {
                 maxSale = sales[j];
                 numberMaxMonth = j + 1;
             }
@@ -34,23 +22,23 @@ public class StatService {
     }
 
 
-    public long findMin (long [] sales){
-        long minSale = sales [0];
+    public long findMin(long[] sales) {
+        long minSale = sales[0];
         long numberMinMonth = 0;
-        for (int j = 0; j<sales.length; j++){
-            if (minSale > sales[j]){
-                minSale = sales [j];
+        for (int j = 0; j < sales.length; j++) {
+            if (minSale > sales[j]) {
+                minSale = sales[j];
                 numberMinMonth = j + 1;
             }
         }
         return numberMinMonth;
     }
 
-    public long calculateBelowMid (long [] months) {
+    public long calculateBelowMid(long[] months) {
         long numberBelowMid = 0;
         long mid = calculateMid(months);
-        for (long month : months){
-            if (mid > month ){
+        for (long month : months) {
+            if (mid > month) {
                 numberBelowMid++;
 
             }
@@ -58,11 +46,11 @@ public class StatService {
         return numberBelowMid;
     }
 
-    public long calculateAboveMid (long [] months) {
+    public long calculateAboveMid(long[] months) {
         long numberAboveMid = 0;
         long mid = calculateMid(months);
-        for (long month : months){
-            if (mid < month ){
+        for (long month : months) {
+            if (mid < month) {
                 numberAboveMid++;
 
             }
@@ -70,8 +58,17 @@ public class StatService {
         return numberAboveMid;
     }
 
-
-
-
-
+    public long calculateMid(long[] months) {
+        long mid = 0;
+        if (months.length > 0) {
+            long sum = calculateSum(months);
+            for (long month : months) {
+                mid = sum / months.length;
+            }
+        }
+        return mid;
+    }
 }
+
+
+
